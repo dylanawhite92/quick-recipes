@@ -8,6 +8,7 @@ const App = () => {
 
   // State
   const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
 
   // Query API for chicken recipes
   const getRecipes = async () => {
@@ -17,6 +18,12 @@ const App = () => {
     console.log(data.hits);
   }
 
+  // Handle on change event in search bar
+  const updateSearch = event => {
+    setSearch(event.target.value);
+    console.log(search);
+  }
+
   useEffect(() => {
     getRecipes();
   }, []);
@@ -24,7 +31,7 @@ const App = () => {
   return (
     <div className="App">
       <form className="search-form">
-        <input className="search-bar" type="text"/>
+        <input className="search-bar" type="text" value={search} onChange={updateSearch}/>
         <button  className="search-button" type="submit">
           Search
         </button>
@@ -37,7 +44,7 @@ const App = () => {
           calories={recipe.recipe.calories}
           image={recipe.recipe.image}
         />
-      ))};
+      ))}
     </div>
   );
 }
