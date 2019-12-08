@@ -32,6 +32,7 @@ const App = () => {
     setSearch("");
   }
 
+  // Add query as dependency so it will only run when getSearch is fired from onSubmit
   useEffect(() => {
     getRecipes();
   }, [query]);
