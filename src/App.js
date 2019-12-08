@@ -14,6 +14,7 @@ const App = () => {
     const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();
     setRecipes(data.hits);
+    console.log(data.hits);
   }
 
   useEffect(() => {
@@ -28,6 +29,10 @@ const App = () => {
           Search
         </button>
       </form>
+
+      {recipes.map(recipe => (
+        <Recipe />
+      ))};
     </div>
   );
 }
