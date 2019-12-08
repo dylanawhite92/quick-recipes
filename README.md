@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Quick Recipes
 
-Quick Recipes is a Single Page Application (SPA) built using React.js and the Edamam API. It is meant to be used to search and display recipes and nutritional data.
+Quick Recipes is a Single Page Application (SPA) built using React.js and the Edamam Recipe Search API. It is used to search and display recipes for both food and cocktails and, as well as nutritional data.
 
 
 ## Installation
