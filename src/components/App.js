@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Recipe from "./Recipe";
-import './App.css';
+import '../css/App.css';
 
 const App = () => {
   const APP_ID = process.env.REACT_APP_API_ID;
