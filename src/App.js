@@ -2,15 +2,19 @@ import React from 'react';
 import './App.css';
 
 const App = () => {
-  const API_ID = process.env.REACT_APP_API_ID;
-  const API_KEY = process.env.REACT_APP_API_KEY;
+  const APP_ID = process.env.REACT_APP_API_ID;
+  const APP_KEY = process.env.REACT_APP_API_KEY;
 
-  console.log(API_ID);
-  console.log(API_KEY);
+  const exampleRequest = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
+
+  console.log(exampleRequest);
 
   return (
     <div className="App">
-      <h1>Hello React</h1>
+      <form className="search-form">
+        <input type="text"/>
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 }
