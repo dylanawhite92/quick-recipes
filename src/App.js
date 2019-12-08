@@ -29,11 +29,12 @@ const App = () => {
   const getSearch = event => {
     event.preventDefault();
     setQuery(search);
+    setSearch("");
   }
 
   useEffect(() => {
     getRecipes();
-  }, []);
+  }, [query]);
 
   return (
     <div className="App">
