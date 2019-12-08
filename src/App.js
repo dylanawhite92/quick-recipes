@@ -4,14 +4,16 @@ import './App.css';
 const App = () => {
   const APP_ID = process.env.REACT_APP_API_ID;
   const APP_KEY = process.env.REACT_APP_API_KEY;
-  const exampleRequest = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
-  console.log(exampleRequest);
 
-  const [counter, setCounter] = useState(0);
+  const getRecipes = async () => {
+    const response = await fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    const data = await response.json();
+    console.log(data.hits);
+  }
 
   useEffect(() => {
-    console.log("Use Effect is working");
-  })
+    getRecipes();
+  }, []);
 
   return (
     <div className="App">
@@ -21,8 +23,6 @@ const App = () => {
           Search
         </button>
       </form>
-
-      <h1 onClick={() => setCounter(counter + 1)}>{counter}</h1>
     </div>
   );
 }
