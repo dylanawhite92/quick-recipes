@@ -1,6 +1,9 @@
 import React from "react";
+import style from "./recipe.module.css";
 
 const Recipe = ({ title, calories, image, ingredients }) => {
+    const calorieCount = Math.trunc(calories)
+
     return(
         <div className="recipe">
             <h1>{title}</h1>
@@ -11,7 +14,7 @@ const Recipe = ({ title, calories, image, ingredients }) => {
                 ))}
             </ol>
             <br />
-            <p>Calories: {calories}</p>
+            <p>Calories: {calorieCount}</p>
             <img src={image} alt={title} />
         </div>
     );
