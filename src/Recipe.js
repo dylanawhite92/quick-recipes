@@ -5,7 +5,7 @@ const Recipe = ({ title, calories, image, ingredients }) => {
     const calorieCount = Math.trunc(calories)
 
     return(
-        <div className="recipe">
+        <div className={style.recipe}>
             <h1>{title}</h1>
             <ol>
                 Ingredients:
